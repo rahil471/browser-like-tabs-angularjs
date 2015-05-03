@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta name="description" content="In this tutorial we will implement notifications in Angular js. We will be implementing this using angularjs-growl-2 library. The best thing about this is that it is, both developer and user friendly. Which means it looks neat and is pretty easy to implement."/>
+		<meta name="keywords" content="AngularJs,ngAnimate,Animations in AngularJS,css3 Animations,Easy animations in Angular Js,Javascript "/>
+		<link rel="canonical" href="http://code.ciphertrick.com/demo/notifications/" />
+		<meta property="og:locale" content="en_US" />
+		<meta property="og:type" content="Notifications in Angular JS" />
+		<meta property="og:title" content="Easy notifications in Angular JS | Demo Cipher Trick" />
+		<meta property="og:description" content="In this tutorial we will implement notifications in Angular js. We will be implementing this using angularjs-growl-2 library. The best thing about this is that it is, both developer and user friendly. Which means it looks neat and is pretty easy to implement./>
+		<meta property="og:url" content="http://code.ciphertrick.com/demo/notifications/" />
+		<meta property="og:site_name" content="Cipher Trick" />
+		
+		<link href="css/bootstrap.min.css" rel="stylesheet" media="screen" />
+		<link href="css/bootstrap-theme.min.css" rel="stylesheet" media="screen"/>
+		<link href="css/style.css" rel="stylesheet" media="screen"/>
+	</head>
+	<body ng-app="tabDemo">
+		<div role="tabpanel" ng-controller="tabCtrl">
+			<ul class="nav nav-tabs" role="tablist">
+				<li role="presentation" ng-repeat="tab in tabs" ng-click="selectTab($index)" ng-class="{'active':selectedTab == $index}">
+					<a data-target="#tab" aria-controls="home" role="tab" data-toggle="tab">Tab {{tab.id}} <span ng-click="deleteTab($index)" class="glyphicon glyphicon-remove"></span></a>
+				</li>
+				<li role="presentation" ng-click="addTab()">
+					<a aria-controls="home" role="tab" data-toggle="tab">( + )</a>
+				</li>
+			</ul>
+			<div class="tab-content">
+				<div role="tabpanel" class="tab-pane active" id="tab">
+					<h1>Tab {{tabs[selectedTab].id}}</h1>
+					<h3>Content:- {{tabs[selectedTab].content}}</h3>
+				</div>
+			</div>
+		</div>
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.3.15/angular.js"></script>
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.3.15/angular-animate.min.js"></script>
+		<script src="js/app.js"></script>
+	</body>
+</html>
